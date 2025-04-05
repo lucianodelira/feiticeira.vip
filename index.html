@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>FeiticeiraVIP - A Banca de Apostas Mais Confiável e Rentável</title>
 
   <!-- Prevenção de Cache -->
@@ -10,7 +10,7 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
-  <!-- SEO -->
+  <!-- SEO & Open Graph -->
   <meta name="description" content="A Feiticeira.VIP é a melhor plataforma de apostas com segurança, pagamentos instantâneos via Pix e suporte 24/7. Jogue e multiplique seus ganhos!" />
   <meta name="keywords" content="banca de apostas, Feiticeira VIP, apostas online, loterias, cassino, palpites esportivos, ganhar dinheiro, apostas seguras, pix rápido" />
   <meta name="author" content="Feiticeira.VIP" />
@@ -24,28 +24,21 @@
   <meta name="twitter:title" content="Feiticeira.VIP - A Banca de Apostas Mais Confiável e Rentável" />
   <meta name="twitter:description" content="Aposte com segurança e receba via Pix na hora. Acesse agora a Feiticeira.VIP!" />
   <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png" />
-
   <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png" />
   <link rel="canonical" href="https://www.feiticeiravip.com.br" />
 
-  <script>
-    (function () {
-      const currentURL = window.location.href;
-      if (currentURL.includes("feiticeiravip.com.br") && !currentURL.includes("www.feiticeiravip.com.br")) {
-        const newURL = currentURL.replace("https://feiticeiravip.com.br", "https://www.feiticeiravip.com.br");
-        window.location.replace(newURL);
-      }
-    })();
-  </script>
-
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
+      height: 100vh;
       background: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-      height: 100vh;
       overflow: hidden;
     }
 
@@ -61,74 +54,72 @@
       border: none;
     }
 
-    .buttons {
-      height: 10vh;
-      min-height: 60px;
-      background: #111;
+    .footer-buttons {
       display: flex;
+      justify-content: space-around;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 5px 10px;
-      box-sizing: border-box;
+      padding: 10px;
+      background-color: #111;
     }
 
-    .buttons a {
+    .footer-buttons a {
       flex: 1;
-      max-width: 110px;
-      text-align: center;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 8px 10px;
+      margin: 0 5px;
+      background: #333;
       color: #fff;
+      padding: 8px;
+      font-size: 12px;
+      border-radius: 5px;
+      text-align: center;
       text-decoration: none;
-      border-radius: 6px;
-      white-space: nowrap;
+      font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
-    .btn-download {
-      background: #4CAF50;
-    }
+    .footer-buttons a.download { background: #4CAF50; }
+    .footer-buttons a.banca { background: #FF4500; }
+    .footer-buttons a.tutorial { background: #673AB7; }
 
-    .btn-parceira {
-      background: #FF4500;
-    }
-
-    .btn-tutorial {
-      background: #673AB7;
-    }
-
-    .buttons img {
+    .footer-buttons img {
       width: 16px;
       height: 16px;
       border-radius: 50%;
     }
   </style>
-</head>
 
+  <script>
+    (function () {
+      var currentURL = window.location.href;
+      if (
+        currentURL.includes("feiticeiravip.com.br") &&
+        !currentURL.includes("www.feiticeiravip.com.br")
+      ) {
+        var newURL = currentURL.replace("https://feiticeiravip.com.br", "https://www.feiticeiravip.com.br");
+        window.location.replace(newURL);
+      }
+    })();
+  </script>
+</head>
 <body>
   <div class="app-container">
-    
-    <!-- IFRAME PRINCIPAL -->
+    <!-- Conteúdo principal -->
     <iframe src="https://app.feiticeira.vip/pr/PRBJ9rmd" allowfullscreen></iframe>
 
-    <!-- BOTÕES FIXOS NA BASE -->
-    <div class="buttons">
-      <a class="btn-download" href="https://github.com/lucianodelira/app.acertos.club/raw/f389362c4a226e7a4d56f474d1346e8ce3ad50d4/ACERTOSCLUB.apk">
+    <!-- Botões fixos no rodapé -->
+    <div class="footer-buttons">
+      <a class="download" href="https://github.com/lucianodelira/app.acertos.club/raw/f389362c4a226e7a4d56f474d1346e8ce3ad50d4/ACERTOSCLUB.apk">
         📲 App
       </a>
 
-      <a class="btn-parceira" href="https://WWW.ACERTOSCLUB.COM" target="_blank">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrejyS8jFb4iA7-shAFfeWG9d-r8vleMloL60vXIZRaps3j1ZjjtAaDpkryhG0pLdy8Q4W-Bny1G5fDAxGuKDRXs-ytlypuBQ9UGsrXDD14QMORXBDbO1zkJ9OcbKh7n7YDp-ZunghfP3q4ucZFN62kLPA149uRiIWw8xy0uDuq_Xg6xS_9hZTBCMFh3sb/s320/IMG-20240927-WA0455__2_-removebg-removebg-preview%20(1).png" alt="Ícone" />
+      <a class="banca" href="https://WWW.ACERTOSCLUB.COM" target="_blank">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrejyS8jFb4iA7-shAFfeWG9d-r8vleMloL60vXIZRaps3j1ZjjtAaDpkryhG0pLdy8Q4W-Bny1G5fDAxGuKDRXs-ytlypuBQ9UGsrXDD14QMORXBDbO1zkJ9OcbKh7n7YDp-ZunghfP3q4ucZFN62kLPA149uRiIWw8xy0uDuq_Xg6xS_9hZTBCMFh3sb/s320/IMG-20240927-WA0455__2_-removebg-removebg-preview%20(1).png" alt="Ícone">
         Parceira
       </a>
 
-      <a class="btn-tutorial" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <a class="tutorial" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
         📘 Tutorial
       </a>
     </div>
