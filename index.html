@@ -2,11 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>FeiticeiraVIP - A Banca de Apostas Mais Confiável e Rentável</title>
+
+  <!-- Prevenção de Cache -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
+
+  <!-- SEO -->
   <meta name="description" content="A Feiticeira.VIP é a melhor plataforma de apostas com segurança, pagamentos instantâneos via Pix e suporte 24/7. Jogue e multiplique seus ganhos!" />
   <meta name="keywords" content="banca de apostas, Feiticeira VIP, apostas online, loterias, cassino, palpites esportivos, ganhar dinheiro, apostas seguras, pix rápido" />
   <meta name="author" content="Feiticeira.VIP" />
@@ -20,57 +24,114 @@
   <meta name="twitter:title" content="Feiticeira.VIP - A Banca de Apostas Mais Confiável e Rentável" />
   <meta name="twitter:description" content="Aposte com segurança e receba via Pix na hora. Acesse agora a Feiticeira.VIP!" />
   <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png" />
+
   <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png" />
   <link rel="canonical" href="https://www.feiticeiravip.com.br" />
 
   <script>
     (function () {
-      var currentURL = window.location.href;
-      if (
-        currentURL.includes("feiticeiravip.com.br") &&
-        !currentURL.includes("www.feiticeiravip.com.br")
-      ) {
-        var newURL = currentURL.replace("https://feiticeiravip.com.br", "https://www.feiticeiravip.com.br");
+      const currentURL = window.location.href;
+      if (currentURL.includes("feiticeiravip.com.br") && !currentURL.includes("www.feiticeiravip.com.br")) {
+        const newURL = currentURL.replace("https://feiticeiravip.com.br", "https://www.feiticeiravip.com.br");
         window.location.replace(newURL);
       }
     })();
   </script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+
+    .buttons {
+      height: 10vh;
+      min-height: 60px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 5px 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons a {
+      flex: 1;
+      max-width: 110px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 8px 10px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .btn-download {
+      background: #4CAF50;
+    }
+
+    .btn-parceira {
+      background: #FF4500;
+    }
+
+    .btn-tutorial {
+      background: #673AB7;
+    }
+
+    .buttons img {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+  </style>
 </head>
-<body style="margin: 0; padding: 0; background: #000; color: #fff; font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center;">
 
-  <!-- IFRAME PRINCIPAL -->
-  <iframe
-    src="https://app.feiticeira.vip/pr/PRBJ9rmd"
-    frameborder="0"
-    width="100%"
-    height="900px"
-    style="max-width: 200%; border: none;"
-    allowfullscreen
-  ></iframe>
-
-  <!-- Botões em linha -->
-  <div style="display: flex; gap: 10px; margin: 15px 0; flex-wrap: wrap; justify-content: center;">
+<body>
+  <div class="app-container">
     
-    <!-- Botão Baixar App -->
-    <a href="https://github.com/lucianodelira/app.acertos.club/raw/f389362c4a226e7a4d56f474d1346e8ce3ad50d4/ACERTOSCLUB.apk"
-       style="background: #4CAF50; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-      📲 Baixar App
-    </a>
+    <!-- IFRAME PRINCIPAL -->
+    <iframe src="https://app.feiticeira.vip/pr/PRBJ9rmd" allowfullscreen></iframe>
 
-    <!-- Botão Banca Parceira -->
-    <a href="https://WWW.ACERTOSCLUB.COM" target="_blank"
-       style="background: #FF4500; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrejyS8jFb4iA7-shAFfeWG9d-r8vleMloL60vXIZRaps3j1ZjjtAaDpkryhG0pLdy8Q4W-Bny1G5fDAxGuKDRXs-ytlypuBQ9UGsrXDD14QMORXBDbO1zkJ9OcbKh7n7YDp-ZunghfP3q4ucZFN62kLPA149uRiIWw8xy0uDuq_Xg6xS_9hZTBCMFh3sb/s320/IMG-20240927-WA0455__2_-removebg-removebg-preview%20(1).png"
-           alt="Ícone" style="width: 20px; height: 20px; border-radius: 50%;" />
-      Banca Parceira
-    </a>
+    <!-- BOTÕES FIXOS NA BASE -->
+    <div class="buttons">
+      <a class="btn-download" href="https://github.com/lucianodelira/app.acertos.club/raw/f389362c4a226e7a4d56f474d1346e8ce3ad50d4/ACERTOSCLUB.apk">
+        📲 App
+      </a>
 
-    <!-- Botão Tutorial -->
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
-       style="background: #673AB7; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-      📘 Tutorial
-    </a>
+      <a class="btn-parceira" href="https://WWW.ACERTOSCLUB.COM" target="_blank">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrejyS8jFb4iA7-shAFfeWG9d-r8vleMloL60vXIZRaps3j1ZjjtAaDpkryhG0pLdy8Q4W-Bny1G5fDAxGuKDRXs-ytlypuBQ9UGsrXDD14QMORXBDbO1zkJ9OcbKh7n7YDp-ZunghfP3q4ucZFN62kLPA149uRiIWw8xy0uDuq_Xg6xS_9hZTBCMFh3sb/s320/IMG-20240927-WA0455__2_-removebg-removebg-preview%20(1).png" alt="Ícone" />
+        Parceira
+      </a>
 
+      <a class="btn-tutorial" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+        📘 Tutorial
+      </a>
+    </div>
   </div>
 </body>
 </html>
