@@ -2,8 +2,9 @@
 <html lang="pt-BR">
 <head>
 
-<link rel="manifest" href="manifest.json" />
-<meta name="theme-color" content="#4CAF50" />
+<!-- Manifesto PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s192/feiticeira2.png" />
 
 
   
@@ -119,15 +120,40 @@
   </div>
 
 
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("service-worker.js")
-      .then(reg => console.log("[SW] Registrado com sucesso!", reg))
-      .catch(err => console.error("[SW] Falha ao registrar:", err));
-  }
-</script>
+<button onclick="instalarApp()">Instalar App</button>
 
+  <script>
+    // Registro do Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('service-worker.js')
+        .then(reg => console.log('[SW] Registrado com sucesso!', reg))
+        .catch(err => console.error('[SW] Erro ao registrar:', err));
+    }
+
+    // Instalação manual (opcional)
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    function instalarApp() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(choice => {
+          if (choice.outcome === 'accepted') {
+            console.log('Usuário aceitou instalar o app');
+          } else {
+            console.log('Usuário recusou instalar o app');
+          }
+          deferredPrompt = null;
+        });
+      } else {
+        alert("Você já instalou ou ainda não pode instalar.");
+      }
+    }
+  </script>
   
 </body>
 </html>
