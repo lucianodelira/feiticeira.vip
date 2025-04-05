@@ -2,79 +2,66 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Acertos Bet</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>FeiticeiraVIP - A Banca de Apostas Mais Confiável e Rentável</title>
+
+  <!-- Meta Tags Essenciais -->
+  <meta name="description" content="A Feiticeira.VIP é a melhor plataforma de apostas com segurança, pagamentos instantâneos via Pix e suporte 24/7. Jogue e multiplique seus ganhos!" />
+  <meta name="keywords" content="banca de apostas, Feiticeira VIP, apostas online, loterias, cassino, palpites esportivos, ganhar dinheiro, apostas seguras, pix rápido" />
+  <meta name="author" content="Feiticeira.VIP" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Meta Tags Open Graph -->
+  <meta property="og:title" content="Feiticeira.VIP - A Banca de Apostas Mais Confiável e Rentável" />
+  <meta property="og:description" content="Ganhe dinheiro com apostas seguras na Feiticeira.VIP. Pix rápido e suporte 24h. Jogue agora e maximize seus lucros!" />
+  <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png" />
+  <meta property="og:url" content="https://www.feiticeiravip.com.br/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Meta Tags Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Feiticeira.VIP - A Banca de Apostas Mais Confiável e Rentável" />
+  <meta name="twitter:description" content="Aposte com segurança e receba via Pix na hora. Acesse agora a Feiticeira.VIP!" />
+  <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png" />
+
+  <!-- Tag Canônica -->
+  <link rel="canonical" href="https://www.feiticeiravip.com.br" />
+
+  <!-- Redirecionamento para versão com www -->
+  <script>
+    (function() {
+      var currentURL = window.location.href;
+      if (!currentURL.startsWith("https://www.feiticeiravip.com.br")) {
+        var newURL = currentURL.replace("https://feiticeiravip.com.br", "https://www.feiticeiravip.com.br");
+        window.location.replace(newURL);
+      }
+    })();
+  </script>
+
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
       font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
     }
 
     iframe {
       width: 100%;
-      height: 100%;
+      height: 90vh;
       border: none;
-    }
-
-    .sidebar {
-      position: fixed;
-      left: -250px;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-color: #111;
-      color: white;
-      z-index: 1000;
-      padding: 20px;
-      transition: left 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .sidebar.open {
-      left: 0;
-    }
-
-    .close-btn {
-      font-size: 24px;
-      cursor: pointer;
-      text-align: right;
-    }
-
-    .social-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .social-button img {
-      width: 30px;
-      height: 30px;
-    }
-
-    .show-sidebar-btn {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 30px;
-      cursor: pointer;
-      color: white;
-      background: #111;
-      border-radius: 5px;
-      padding: 5px 10px;
-      z-index: 1001;
     }
 
     .whatsapp-button {
       position: fixed;
-      bottom: 20px;
+      bottom: 80px;
       right: 20px;
-      z-index: 1001;
+      z-index: 1000;
       cursor: pointer;
     }
 
@@ -83,70 +70,81 @@
       height: 60px;
     }
 
-    .ads-container {
-      margin-top: 30px;
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin: 20px 10px;
     }
 
-    .text-center {
-      text-align: center;
-      margin-top: 20px;
-      font-weight: bold;
+    #download-app, #banca-parceira {
+      width: 90%;
+      max-width: 400px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Menu Lateral -->
-  <div class='sidebar' id='sidebar'>
-    <div class='close-btn' onclick='toggleSidebar()'>&#215;</div>
-    <div class='social-buttons'>
-      <a class='social-button' href='https://www.instagram.com/acertosbets' target='_blank'>
-        <img alt='Instagram' src='https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'/>
-      </a>
-      <a class='social-button' href='https://www.youtube.com/@acertosbet.' target='_blank'>
-        <img alt='YouTube' src='https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png'/>
-      </a>
-      <a class='social-button' href='https://web.telegram.org/k/#@ROBODOJOGODOBICHO' target='_blank'>
-        <img alt='Telegram' src='https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg'/>
-      </a>
-      <a class='social-button' href='https://x.com/deunoposti' target='_blank'>
-        <img alt='Twitter' src='https://static.vecteezy.com/ti/vetor-gratis/p1/28286468-twitter-novo-logotipo-twitter-icones-novo-twitter-logotipo-x-2023-x-social-meios-de-comunicacao-icone-gratis-vetor.jpg'/>
+  <!-- Iframe principal -->
+  <iframe
+    id="embeddedIframe"
+    sandbox="allow-scripts allow-same-origin"
+    src="https://app.feiticeira.vip/pr/PRBJ9rmd"
+    allow="clipboard-read; clipboard-write">
+  </iframe>
+
+  <!-- Botões -->
+  <div class="button-container">
+    <!-- Botão de Download (Verde) -->
+    <div id="download-app" style="
+      background: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    ">
+      <a href="https://github.com/lucianodelira/app.acertos.club/raw/f389362c4a226e7a4d56f474d1346e8ce3ad50d4/ACERTOSCLUB.apk" 
+         style="text-decoration: none; color: #fff;">
+        📲 Baixar App
       </a>
     </div>
 
-    <div class='ads-container'>
-      <!-- Código do anúncio -->
-      <script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5066020163837493' crossorigin='anonymous'></script>
-      <ins class='adsbygoogle'
-        style='display:block'
-        data-ad-client='ca-pub-5066020163837493'
-        data-ad-slot='2437426927'
-        data-ad-format='auto'
-        data-full-width-responsive='true'></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+    <!-- Botão Roxo (Banca Parceira) -->
+    <div id="banca-parceira" style="
+      background: #FF4500;
+      color: #FFF;
+      padding: 8px 15px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    ">
+      <a href="https://WWW.ACERTOSCLUB.COM" target="_blank" style="
+         text-decoration: none; 
+         color: #FFF; 
+         display: flex; 
+         align-items: center;
+         gap: 5px;">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrejyS8jFb4iA7-shAFfeWG9d-r8vleMloL60vXIZRaps3j1ZjjtAaDpkryhG0pLdy8Q4W-Bny1G5fDAxGuKDRXs-ytlypuBQ9UGsrXDD14QMORXBDbO1zkJ9OcbKh7n7YDp-ZunghfP3q4ucZFN62kLPA149uRiIWw8xy0uDuq_Xg6xS_9hZTBCMFh3sb/s320/IMG-20240927-WA0455__2_-removebg-removebg-preview%20(1).png" 
+         alt="Ícone" 
+         style="width: 30px; height: 30px; border-radius: 50%;" />
+        Banca Parceira
+      </a>
     </div>
-
-    <div class='text-center'>Redes Sociais</div>
   </div>
-
-  <!-- Botão para abrir o menu -->
-  <div class='show-sidebar-btn' onclick='toggleSidebar()'>&#9776;</div>
-
-  <!-- Iframe -->
-  <iframe id='embeddedIframe' sandbox='allow-scripts allow-same-origin' allow='clipboard-read; clipboard-write' src='https://app.feiticeira.vip/pr/PRBJ9rmd'></iframe>
 
   <!-- Botão do WhatsApp -->
-  <div class='whatsapp-button' onclick='window.open("https://wa.me/+5583993209139?text=Ol%C3%A1,%20gostaria%20de%20jogar!como%20fa%C3%A7o?", "_blank")'>
-    <img alt='WhatsApp' src='https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg'/>
+  <div class="whatsapp-button" onclick="window.open('https://wa.me/+5583993209139?text=Ol%C3%A1,%20gostaria%20de%20jogar!como%20fa%C3%A7o?', '_blank')"> 
+    <img alt="WhatsApp" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
   </div>
 
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open');
-    }
-  </script>
 </body>
 </html>
