@@ -250,15 +250,22 @@
 
 
 
-<!-- Banner visível -->
-<style>
+
+
+    
+   <style>
+  /* Remove overflow apenas enquanto o banner estiver ativo */
+  body.banner-active {
+    overflow: hidden;
+  }
+
   #redirecionar-banner {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex; /* já visível */
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 99999;
@@ -278,6 +285,10 @@
 
 <script>
   const destino = "https://app.feiticeira.club/pr/PRBJ9rmd";
+  const banner = document.getElementById("redirecionar-banner");
+
+  // Mostra banner e bloqueia scroll
+  document.body.classList.add("banner-active");
 
   function isBot() {
     const ua = navigator.userAgent.toLowerCase();
@@ -286,32 +297,27 @@
   }
 
   if (!isBot()) {
-    const banner = document.getElementById("redirecionar-banner");
-
     function redirecionar() {
+      // Remove classe que bloqueia scroll
+      document.body.classList.remove("banner-active");
       window.location.href = destino;
     }
 
     const interacoes = ["click", "scroll", "mousemove", "touchstart", "keydown"];
 
     function handler() {
-      // Remove listeners para evitar múltiplos redirecionamentos
       interacoes.forEach(ev => document.removeEventListener(ev, handler));
       redirecionar();
     }
 
-    // Adiciona listeners
     interacoes.forEach(ev => document.addEventListener(ev, handler));
   } else {
-    // Se for bot, esconde o banner
-    const banner = document.getElementById("redirecionar-banner");
+    // Bot
     if(banner) banner.style.display = "none";
+    document.body.classList.remove("banner-active");
   }
 </script>
-
-
-    
-    
+ 
 
 
 
@@ -320,6 +326,7 @@
 
 </body>
 </html>
+
 
 
 
