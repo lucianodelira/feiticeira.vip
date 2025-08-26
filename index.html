@@ -253,25 +253,27 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const iframe = document.querySelector("iframe");
-    const btn = document.createElement("a");
 
+    const btn = document.createElement("a");
     btn.href = "https://wa.me/5583991485602?text=ola%20,preciso%20de%20suporte.";
     btn.target = "_blank";
     btn.rel = "noopener noreferrer";
-    btn.style.position = "absolute"; // não mais fixed
+
+    btn.style.display = "flex";
+    btn.style.justifyContent = "center";
+    btn.style.alignItems = "center";
     btn.style.width = "64px";
     btn.style.height = "64px";
     btn.style.borderRadius = "50%";
     btn.style.background = "#111";
-    btn.style.display = "flex";
-    btn.style.justifyContent = "center";
-    btn.style.alignItems = "center";
+    btn.style.margin = "15px auto"; // centralizado abaixo do iframe
     btn.style.textDecoration = "none";
-    btn.style.marginTop = "15px";
 
-    btn.innerHTML = `<svg viewBox="0 0 32 32" width="32" height="32" fill="#25D366">
+    btn.innerHTML = `
+      <svg viewBox="0 0 32 32" width="32" height="32" fill="#25D366">
         <path d="M19.11 17.63c..."></path>
-      </svg>`;
+      </svg>
+    `;
 
     // Coloca botão logo depois do iframe
     iframe.insertAdjacentElement("afterend", btn);
@@ -282,8 +284,10 @@
 
 
 
+
 </body>
 </html>
+
 
 
 
