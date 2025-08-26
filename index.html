@@ -258,48 +258,9 @@
 
 
 
-  <!-- Banner de instalação -->
-  <div id="install-banner" style="display:none; position: fixed; bottom: 20px; left: 20px; right: 20px; background: #111; color: #fff; padding: 16px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.6); z-index: 9999; text-align: center;">
-    <p style="margin: 0 0 10px;">📲 Instale nosso app para acesso mais rápido e fácil!</p>
-    <button onclick="instalarApp()" style="background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer;">Instalar App</button>
-  </div>
-
-    // Service Worker e instalação do app
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('[SW] Registrado com sucesso!', reg))
-        .catch(err => console.error('[SW] Erro ao registrar:', err));
-    }
-
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      if (!localStorage.getItem('appInstalado')) {
-        document.getElementById('install-banner').style.display = 'block';
-      }
-    });
-
-    function instalarApp() {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('Usuário aceitou instalar o app');
-            localStorage.setItem('appInstalado', 'true');
-          } else {
-            console.log('Usuário recusou instalar o app');
-          }
-          document.getElementById('install-banner').style.display = 'none';
-          deferredPrompt = null;
-        });
-      } else {
-        alert("Você já instalou ou ainda não pode instalar.");
-      }
-    }
-  </script>
 </body>
 </html>
+
 
 
 
