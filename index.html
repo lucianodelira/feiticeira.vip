@@ -252,16 +252,13 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const iframe = document.querySelector("iframe");
     const btn = document.createElement("a");
+
     btn.href = "https://wa.me/5583991485602?text=ola%20,preciso%20de%20suporte.";
     btn.target = "_blank";
     btn.rel = "noopener noreferrer";
-    btn.setAttribute("aria-label", "Abrir conversa no WhatsApp para suporte");
-
-    // estilo do botão
-    btn.style.position = "fixed";
-    btn.style.bottom = "20px";
-    btn.style.right = "20px";
+    btn.style.position = "absolute"; // não mais fixed
     btn.style.width = "64px";
     btn.style.height = "64px";
     btn.style.borderRadius = "50%";
@@ -269,26 +266,25 @@
     btn.style.display = "flex";
     btn.style.justifyContent = "center";
     btn.style.alignItems = "center";
-    btn.style.boxShadow = "0 8px 20px rgba(0,0,0,.25)";
-    btn.style.zIndex = "9999";
     btn.style.textDecoration = "none";
+    btn.style.marginTop = "15px";
 
-    // ícone SVG do WhatsApp
-    btn.innerHTML = `
-      <svg viewBox="0 0 32 32" width="32" height="32" fill="#25D366" aria-hidden="true">
-        <path d="M19.11 17.63c-.26-.13-1.53-.76-1.77-.85-.24-.09-.42-.13-.6.13-.17.26-.69.85-.85 1.02-.16.18-.31.2-.57.07-.26-.13-1.1-.41-2.1-1.29-.78-.69-1.31-1.55-1.46-1.81-.15-.26-.02-.4.11-.53.11-.11.26-.29.39-.44.13-.15.17-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.46-.15 0-.33-.02-.51-.02-.18 0-.46.07-.7.33-.24.26-.92.9-.92 2.19 0 1.29.95 2.55 1.08 2.73.13.18 1.88 2.87 4.55 4.02.64.28 1.14.45 1.53.58.64.2 1.23.17 1.69.1.52-.08 1.53-.62 1.75-1.23.22-.6.22-1.11.15-1.23-.06-.11-.24-.18-.5-.31zM16.02 3C9.94 3 5 7.94 5 14.02c0 1.94.51 3.75 1.39 5.33L5 27l7.87-1.99c1.53.84 3.27 1.31 5.15 1.31C24.1 26.32 29 21.38 29 15.3 29 9.22 24.1 4.3 18.02 4.3h-.02zm0 21.4c-1.69 0-3.27-.49-4.59-1.33l-.33-.2-4.67 1.18 1.25-4.55-.22-.35a9.6 9.6 0 01-1.49-5.18c0-5.32 4.33-9.65 9.67-9.65 5.32 0 9.65 4.33 9.65 9.65 0 5.34-4.33 9.65-9.65 9.65z"/>
-      </svg>
-    `;
+    btn.innerHTML = `<svg viewBox="0 0 32 32" width="32" height="32" fill="#25D366">
+        <path d="M19.11 17.63c..."></path>
+      </svg>`;
 
-    document.body.appendChild(btn);
+    // Coloca botão logo depois do iframe
+    iframe.insertAdjacentElement("afterend", btn);
   });
 </script>
 
 
 
 
+
 </body>
 </html>
+
 
 
 
