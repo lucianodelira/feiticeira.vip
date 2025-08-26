@@ -327,52 +327,6 @@
     <button onclick="instalarApp()" style="background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer;">Instalar App</button>
   </div>
 
-  <script>
-    const menu = document.getElementById('menu-hamburguer');
-    const botoesContainer = document.getElementById('botoes-container');
-
-    function toggleMenu() {
-      const aberto = menu.classList.toggle('open');
-      if (aberto) {
-        botoesContainer.classList.add('open');
-      } else {
-        botoesContainer.classList.remove('open');
-      }
-    }
-
-    menu.addEventListener('click', toggleMenu);
-
-    // Permitir abrir/fechar com Enter ou Espaço para acessibilidade
-    menu.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
-      }
-    });
-
-    // Eventos dos botões
-    document.getElementById("botao-bola").addEventListener("click", function () {
-      window.location.href = "https://www.brasileirao.site";
-    });
-    document.getElementById("botao-blaze").addEventListener("click", function () {
-      window.location.href = "https://blaze.cxclick.com/visit/?bta=50593&brand=blaze";
-    });
-    document.getElementById("botao-palpites").addEventListener("click", function () {
-      window.open("https://trivo.acertosclub.com", "_blank");
-    });
-    document.getElementById("botao-tigerclub").addEventListener("click", function () {
-      window.open("https://app.tigersclub.vip/pr/cmDAwXiS", "_blank");
-    });
-    document.getElementById("botao-acertosclub").addEventListener("click", function () {
-      window.open("https://app.acertos.club/pr/sbrqjugZ", "_blank");
-    });
-    document.getElementById("botao-acertos").addEventListener("click", function () {
-      window.open("https://www.jogodamina.site/", "_blank");
-    });
-    document.getElementById("botao-brasil").addEventListener("click", function () {
-      window.open("https://app.bancabrasileira.com.br/pr/EYZ6dslW", "_blank");
-    });
-
     // Service Worker e instalação do app
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
@@ -409,3 +363,4 @@
   </script>
 </body>
 </html>
+
